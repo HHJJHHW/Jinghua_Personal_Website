@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, ArrowUpRight, Github, Info, BarChart2, ZoomIn } from 'lucide-react';
 import { PROJECTS } from '../constants';
@@ -73,12 +74,22 @@ const ProjectGallery: React.FC = () => {
 
       {/* Modal Overlay */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[60] bg-white/98 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 overflow-hidden">
-          <button onClick={closeModal} className="absolute top-8 right-8 text-slate-900 hover:text-duke-blue transition-colors z-[70] p-2 bg-slate-50 rounded-full">
-            <X size={24} />
+        <div 
+          className="fixed inset-0 z-[60] bg-white/98 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 overflow-hidden"
+          onClick={closeModal} // 点击背景关闭
+        >
+          {/* 下移并增强的关闭按钮 */}
+          <button 
+            onClick={(e) => { e.stopPropagation(); closeModal(); }} 
+            className="absolute top-12 right-8 md:top-16 md:right-16 text-slate-900 hover:text-duke-blue transition-all z-[70] p-3 bg-slate-100/50 hover:bg-slate-200 rounded-full shadow-sm"
+          >
+            <X size={28} />
           </button>
           
-          <div className="flex flex-col lg:flex-row gap-12 w-full max-w-6xl h-full lg:h-auto overflow-y-auto lg:overflow-visible py-10 lg:py-0 items-center">
+          <div 
+            className="flex flex-col lg:flex-row gap-12 w-full max-w-6xl h-full lg:h-auto overflow-y-auto lg:overflow-visible py-20 lg:py-0 items-center"
+            onClick={(e) => e.stopPropagation()} // 防止点击内容区触发关闭
+          >
             {/* Left Column: Data Visualization Image */}
             <div className="lg:w-1/2 w-full flex flex-col gap-4">
               <div className="flex items-center justify-between mb-2">
@@ -102,7 +113,7 @@ const ProjectGallery: React.FC = () => {
                 <img 
                   src={selectedProject.images[currentImgIdx]} 
                   alt={selectedProject.title} 
-                  className="w-full h-full object-contain" // Use contain to ensure no cropping for charts
+                  className="w-full h-full object-contain"
                 />
                 
                 {selectedProject.images.length > 1 && (
@@ -128,7 +139,9 @@ const ProjectGallery: React.FC = () => {
             {/* Right Column: Findings & Project Info */}
             <div className="lg:w-1/2 w-full flex flex-col">
               <div className="flex items-center gap-2 mb-4">
-                <Info size={16} className="text-duke-blue" />
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center">
+                   <Info size={16} className="text-duke-blue" />
+                </div>
                 <span className="text-duke-blue text-[10px] font-bold uppercase tracking-[0.3em] block">Main Findings & Analysis</span>
               </div>
               
@@ -175,14 +188,14 @@ const ProjectGallery: React.FC = () => {
           className="fixed inset-0 z-[100] bg-black/98 backdrop-blur-2xl flex items-center justify-center animate-in fade-in duration-500 overflow-hidden"
           onClick={() => setIsFullScreen(false)}
         >
-          {/* Top Bar */}
-          <div className="absolute top-0 left-0 w-full p-8 flex justify-between items-center z-[110]">
+          {/* Top Bar with Downward shifted close button */}
+          <div className="absolute top-0 left-0 w-full p-8 md:p-12 flex justify-between items-center z-[110]">
             <div className="flex flex-col">
               <span className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">High Resolution Analysis</span>
               <h4 className="text-white font-bold tracking-tight text-xl">{selectedProject.title}</h4>
             </div>
             <button 
-              className="text-white/60 hover:text-white transition-all p-4 bg-white/5 rounded-full hover:bg-white/10"
+              className="text-white/60 hover:text-white transition-all p-4 bg-white/5 rounded-full hover:bg-white/10 mt-4" // mt-4 to shift down
               onClick={() => setIsFullScreen(false)}
             >
               <X size={32} />
