@@ -1,8 +1,5 @@
 {
   "name": "Jinghua He - Personal Portfolio",
   "description": "Professional portfolio website for Jinghua He, a Duke MQM student, featuring projects, experience, and an AI interactive avatar.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "requestFramePermissions": []
 }

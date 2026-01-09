@@ -2,10 +2,21 @@
 import { GoogleGenAI } from "@google/genai";
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, CERTIFICATES } from "../constants";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
+// 确保在浏览器环境下安全访问 process.env
+const getApiKey = () => {
+  try {
+    return process.env.API_KEY || "";
+  } catch (e) {
+    console.warn("API_KEY not found in process.env");
+    return "";
+  }
+};
+
+const apiKey = getApiKey();
+const ai = new GoogleGenAI({ apiKey });
 
 const systemInstruction = `
-You are Jinghua He's AI Avatar. You represent Jinghua He, a Master's student at Duke University's Fuqua School of Business.
+You are Jinghua He's AI Avatar. You represent Jinghua He, a Master's student at Duke University's Fuqua School of Business (MQM: Business Analytics).
 Your goal is to answer questions from recruiters or visitors about Jinghua's background, projects, and experiences in a professional yet friendly way.
 
 Information about Jinghua:
@@ -22,6 +33,10 @@ Always speak in the first person ("I" / "Me") as if you are the digital version 
 `;
 
 export const sendMessageToAI = async (message: string) => {
+  if (!apiKey) {
+    return "The AI assistant is currently unavailable (API Key missing). Please contact Jinghua directly at " + PERSONAL_INFO.email;
+  }
+  
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
