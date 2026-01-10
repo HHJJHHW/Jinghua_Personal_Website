@@ -25,10 +25,10 @@ export const PROJECTS: Project[] = [
       "Customer Value Analysis: Modeled overall ratings to discover that cleanliness, accuracy, and value—not host portfolio size—are the primary determinants of perceived customer value and experience quality."
     ],
     images: [
-      "https://i.postimg.cc/njzMG8vS/Screenshot-2026-01-09-at-2-11-48-AM.png",
-      "https://i.postimg.cc/qhRgxf85/Screenshot-2026-01-09-at-2-12-13-AM.png"
+      "https://i.postimg.cc/85dWDNsG/Screenshot-2026-01-09-at-2-11-48-AM.png",
+      "https://i.postimg.cc/1t06Ps4s/Screenshot-2026-01-09-at-2-12-13-AM.png"
     ],
-    coverImage: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=100&w=2560",
     tags: ["Python", "XGBoost", "Random Forest", "EDA", "Pricing Analytics"],
     githubUrl: "https://github.com/HHJJHHW/Airbnb_Price_Prediction_in_LA"
   },
@@ -40,18 +40,18 @@ export const PROJECTS: Project[] = [
       "Technical Method: Built a full PyTorch training loop with Adam optimizer and mini-batch loading. Developed robust data preprocessing to handle mixed categorical/numerical types with zero row loss.",
       "Performance Dynamics: Analyzed the impact of regularization and dropout on preventing overfitting across 300 epochs, visualizing the learning stability of deep vs. linear models.",
       "Adverse Selection Simulation: Modeled iBuyer profitability under realistic owner-acceptance rules. Found that mean profit drops from 15.1% to -6.1% due to homeowners selectively accepting high-bias offers.",
-      "Business Intelligence: Identified that model over-prediction bias (0.24) is significantly correlated with loss-making deals, providing actionable insights for Zestimate risk mitigation strategies."
+      "Business Intelligence: Identified that model over-prediction bias (0.24) is significantly correlated with xloss-making deals, providing actionable insights for Zestimate risk mitigation strategies."
     ],
-    coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200", 
+    coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=100&w=2560", 
     images: [
-      "https://i.postimg.cc/BXF407hj/Screenshot-2026-01-08-at-11-39-36-PM.png", // Figure 1: Linear Baseline
-      "https://i.postimg.cc/Vdtm8Z7M/Screenshot-2026-01-08-at-11-39-46-PM.png", // Figure 2: MLP 2 Layers
-      "https://i.postimg.cc/svWsrHnp/Screenshot-2026-01-08-at-11-39-59-PM.png", // Figure 3: MLP 4 Layers
-      "https://i.postimg.cc/xcmn2psM/Screenshot-2026-01-08-at-11-40-10-PM.png", // Figure 4: Regularization
-      "https://i.postimg.cc/8jvNSXyH/Screenshot-2026-01-08-at-11-43-31-PM.png", // Figure 5: Dropout
-      "https://i.postimg.cc/dLCwYNW6/Screenshot-2026-01-08-at-11-44-07-PM.png", // Figure 6: Best Model
-      "https://i.postimg.cc/MvBqS3st/Screenshot-2026-01-08-at-11-44-18-PM.png", // Model Comparison Table
-      "https://i.postimg.cc/Tpbf6Nkt/Screenshot-2026-01-08-at-11-44-31-PM.png"  // Figure 10: Bias Histogram
+      "https://i.postimg.cc/qqvS8KB8/Screenshot-2026-01-08-at-11-39-36-PM.png",
+      "https://i.postimg.cc/hGRY26PP/Screenshot-2026-01-08-at-11-39-46-PM.png",
+      "https://i.postimg.cc/3wZtnwcc/Screenshot-2026-01-08-at-11-39-59-PM.png",
+      "https://i.postimg.cc/RVnG2dY6/Screenshot-2026-01-08-at-11-40-10-PM.png",
+      "https://i.postimg.cc/02mF79PY/Screenshot-2026-01-08-at-11-43-31-PM.png",
+      "https://i.postimg.cc/3wbnPq3Y/Screenshot-2026-01-09-at-11-44-07-PM.png",
+      "https://i.postimg.cc/ZKFjTnTY/Screenshot-2026-01-08-at-11-44-18-PM.png",
+      "https://i.postimg.cc/NMH7ZfJw/Screenshot-2026-01-08-at-11-44-31-PM.png"
     ],
     tags: ["Python", "PyTorch", "Business Analytics", "MLP"],
     githubUrl: "https://github.com/HHJJHHW/House_Price_Prediction"
@@ -66,13 +66,13 @@ export const PROJECTS: Project[] = [
       "Latent Space Analysis: Leveraged PCA to project high-dimensional embeddings into 2D, successfully validating the model's ability to cluster movies by genre and release era (e.g., Sci-Fi vs. Classic Drama).",
       "Business Value Tool: Engineered a business decision engine that converts predictions into 'Movie Value' rankings (estimating engagement, e.g., Toy Story valued at 5.2M), shifting focus from raw popularity to strategic content worth."
     ],
-    coverImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1200",
+    coverImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/RNtdLw02/Screenshot-2026-01-09-at-12-07-53-AM.png", // Top 10 Popular Movies
-      "https://i.postimg.cc/N5XDkR0W/Screenshot-2026-01-09-at-12-08-08-AM.png", // Popularity & User Activity Histograms
-      "https://i.postimg.cc/xcm53LCr/Screenshot-2026-01-09-at-12-08-25-AM.png", // Top 20 Highly Rated Movies Table
-      "https://i.postimg.cc/4mcPQpdk/Screenshot-2026-01-09-at-12-09-00-AM.png", // Training vs Validation Loss (Base)
-      "https://i.postimg.cc/3dG1F2RQ/Screenshot-2026-01-09-at-12-09-18-AM.png"  // Training vs Validation Loss (Optimized)
+      "https://i.postimg.cc/TY7sG9v2/Screenshot-2026-01-09-at-12-07-53-AM.png",
+      "https://i.postimg.cc/ncRWZkfc/Screenshot-2026-01-09-at-12-08-08-AM.png",
+      "https://i.postimg.cc/9F8kVpHf/Screenshot-2026-01-09-at-12-08-25-AM.png",
+      "https://i.postimg.cc/9F8kVpHM/Screenshot-2026-01-09-at-12-09-00-AM.png",
+      "https://i.postimg.cc/FsW6mZXz/Screenshot-2026-01-09-at-12-09-18-AM.png"
     ],
     tags: ["Python", "PyTorch", "Collaborative Filtering", "PCA"],
     githubUrl: "https://github.com/HHJJHHW/Recommender_System"
@@ -87,12 +87,12 @@ export const PROJECTS: Project[] = [
       "Robustness: Implemented 5-fold cross-validation and early stopping to prevent overfitting, reaching a stable training loss of 0.0503.",
       "Business Value: Scalable solution for smart-city infrastructure, supporting real-time traffic monitoring and autonomous vehicle perception."
     ],
-    coverImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200", 
+    coverImage: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=100&w=2560", 
     images: [
-      "https://i.postimg.cc/NjXZ4HZN/Screenshot-2026-01-09-at-12-26-58-AM.png", // Title Slide
-      "https://i.postimg.cc/N9hmMz6k/Screenshot-2026-01-09-at-12-26-30-AM.png", // Motivation & Business Problem
-      "https://i.postimg.cc/phNzT6fq/Screenshot-2026-01-09-at-12-31-18-AM.png", // Dataset Overview
-      "https://i.postimg.cc/xJrMC4vg/Screenshot-2026-01-09-at-12-31-25-AM.png"  // Modeling Approach
+      "https://i.postimg.cc/NjXZ4HZN/Screenshot-2026-01-09-at-12-26-58-AM.png",
+      "https://i.postimg.cc/0QjftgrF/Screenshot-2026-01-09-at-12-26-30-AM.png",
+      "https://i.postimg.cc/LX5TydnK/Screenshot-2026-01-09-at-12-31-18-AM.png",
+      "https://i.postimg.cc/fLyKH4J4/Screenshot-2026-01-09-at-12-31-25-AM.png"
     ],
     tags: ["Python", "PyTorch", "Faster R-CNN", "Computer Vision"],
     githubUrl: "https://github.com/HHJJHHW/Deep_Learning_in_Car_Object_Detection"
@@ -108,12 +108,12 @@ export const PROJECTS: Project[] = [
       "Key Drivers: Identified Property Size (m2), Room Count, and specific amenities (Elevator, Terrace) as the primary determinants of price premiums across Barcelona's real estate districts.",
       "Inference Strategy: Executed predictions in log-space to minimize average squared errors, successfully back-transforming results using exp() to deliver final market valuations in absolute Euro terms."
     ],
-    coverImage: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/Hcr2VhPB/output-(10).png",
-      "https://i.postimg.cc/G84QH5Sz/output-(11).png",
-      "https://i.postimg.cc/hzXrf53s/output-(12).png",
-      "https://i.postimg.cc/sQMcvN0J/output-(9).png"
+      "https://i.postimg.cc/sXc00FYb/output-(9).png",
+      "https://i.postimg.cc/ZRcDDkPt/output-(10).png",
+      "https://i.postimg.cc/DZgYYVQV/output-(11).png",
+      "https://i.postimg.cc/G2QSS0FW/output-(12).png"
     ],
     tags: ["R", "Linear Regression", "Real Estate Economics"],
     githubUrl: "https://github.com/HHJJHHW/Barcelona_Real_Estate"
@@ -129,13 +129,13 @@ export const PROJECTS: Project[] = [
       "Main Findings: Discovered a strong positive correlation between Black population density and Obama support, while Clinton exhibited significant strength in counties with higher White and Hispanic compositions.",
       "Statistical Inference: Addressed omitted-variable bias by specifying 'controls-heavy' regression designs, isolating the true marginal impact of ethnic shifts on candidate vote share for targeted campaign resource allocation."
     ],
-    coverImage: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=1200",
+    coverImage: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/3d9Qjyx9/Screenshot-2026-01-09-at-1-45-59-AM.png",
-      "https://i.postimg.cc/ZCjzP95Q/Screenshot-2026-01-09-at-1-46-13-AM.png",
-      "https://i.postimg.cc/KRQh7K8q/Screenshot-2026-01-09-at-1-46-21-AM.png",
-      "https://i.postimg.cc/bsLf0GwV/Screenshot-2026-01-09-at-1-48-57-AM.png",
-      "https://i.postimg.cc/D853QWwD/Screenshot-2026-01-09-at-1-49-02-AM.png"
+      "https://i.postimg.cc/YCB2HYKc/Screenshot-2026-01-09-at-1-45-59-AM.png",
+      "https://i.postimg.cc/MpJZSV2z/Screenshot-2026-01-09-at-1-46-13-AM.png",
+      "https://i.postimg.cc/vZw8sfFs/Screenshot-2026-01-09-at-1-46-21-AM.png",
+      "https://i.postimg.cc/jSYqbP0T/Screenshot-2026-01-09-at-1-48-57-AM.png",
+      "https://i.postimg.cc/fRQWNmnw/Screenshot-2026-01-09-at-1-49-02-AM.png"
     ],
     tags: ["R", "Election Analytics", "Random Forest", "Lasso"],
     githubUrl: "https://github.com/HHJJHHW/ObamaClintonVoteDataAnalytics"
@@ -151,10 +151,10 @@ export const PROJECTS: Project[] = [
       "Optimal Combined Forecast: Developed a composite forecasting model using Multiple Linear Regression, weighting expert inputs by their predictive power (β_Stevens ≈ 0.79 vs. β_Illy ≈ 0.16) to achieve a more robust price estimate (214.78).",
       "Visual Insights: Leveraged scatter plots and residual boxplots to diagnose volatility across consultants, providing actionable intelligence for expert selection and procurement risk mitigation."
     ],
-    coverImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/K4jm9rdF/Screenshot-2026-01-09-at-2-01-37-AM.png",
-      "https://i.postimg.cc/Wtzs96xf/Screenshot-2026-01-09-at-2-01-46-AM.png"
+      "https://i.postimg.cc/y6XW8LjJ/Screenshot-2026-01-09-at-2-01-37-AM.png",
+      "https://i.postimg.cc/HW4jk6zH/Screenshot-2026-01-09-at-2-01-46-AM.png"
     ],
     tags: ["R", "Risk Management", "Regression Analysis", "Forecasting"],
     githubUrl: "https://github.com/HHJJHHW/Commodity_Risk_Management"
@@ -167,18 +167,18 @@ export const PROJECTS: Project[] = [
       "Behavioral Analytics: Identified PageValues as the strongest positive driver of purchase, while diagnosing high Bounce and Exit rates as primary friction points. Discovered that New Visitors exhibit significantly higher conversion propensity despite lower session volume.",
       "Advanced Modeling: Architected a hybrid Random Forest model trained on compact PCA components (PC1-PC4) and segment clusters, achieving a superior balance between non-linear capture and model stability compared to GLM baselines.",
       "Performance Metrics: Attained a validated test Accuracy of 97.4% and an exceptional Recall of 97.6% (0.91 F1), effectively solving the class imbalance problem where typical purchasing sessions represent only a small minority of traffic.",
-      "Strategic Deployment: Designed a real-time intervention framework to trigger targeted incentives (e.g., personalized discounts, bundle deals) for high-propensity sessions, optimized via A/B testing at specific probability thresholds."
+      "Strategic Deployment: Designed a real-time intervention framework to trigger targeted incentives (e.g., personalized discounts, bundle deals) for high-propensity sessions, optimized via A/B testing at specific probability thresholds.",
     ],
-    coverImage: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/dk26Ky7X/Screenshot-2026-01-09-at-1-03-26-AM.png",
-      "https://i.postimg.cc/D47gfwsx/Screenshot-2026-01-09-at-1-03-34-AM.png",
-      "https://i.postimg.cc/MfzDZpR3/Screenshot-2026-01-09-at-1-03-39-AM.png",
-      "https://i.postimg.cc/fSMKWRXF/Screenshot-2026-01-09-at-1-03-46-AM.png",
-      "https://i.postimg.cc/D47gfwsY/Screenshot-2026-01-09-at-1-03-51-AM.png",
-      "https://i.postimg.cc/sG3cfgSq/Screenshot-2026-01-09-at-1-03-59-AM.png",
-      "https://i.postimg.cc/9wcpXQT6/Screenshot-2026-01-09-at-1-04-06-AM.png",
-      "https://i.postimg.cc/QKjbNd1G/Screenshot-2026-01-09-at-1-04-12-AM.png"
+      "https://i.postimg.cc/Jng2Z3R1/Screenshot-2026-01-09-at-1-03-26-AM.png",
+      "https://i.postimg.cc/6qv107Qx/Screenshot-2026-01-09-at-1-03-34-AM.png",
+      "https://i.postimg.cc/J0kdqyh8/Screenshot-2026-01-09-at-1-03-39-AM.png",
+      "https://i.postimg.cc/J0kdqyh1/Screenshot-2026-01-09-at-1-03-46-AM.png",
+      "https://i.postimg.cc/KjMsNKYF/Screenshot-2026-01-09-at-1-03-51-AM.png",
+      "https://i.postimg.cc/mkH6wcrL/Screenshot-2026-01-09-at-1-03-59-AM.png",
+      "https://i.postimg.cc/8c6nHFCz/Screenshot-2026-01-09-at-1-04-06-AM.png",
+      "https://i.postimg.cc/6qv107Q3/Screenshot-2026-01-09-at-1-04-12-AM.png"
     ],
     tags: ["R", "Unsupervised Learning", "PCA", "Random Forest"],
     githubUrl: "https://github.com/HHJJHHW/Online_Shoppers_Intention"
@@ -191,12 +191,12 @@ export const PROJECTS: Project[] = [
       "Modeling: Built a Generalized Linear Model (GLM) incorporating rich pairwise interactions across coverage options (A–G) to capture complex, non-linear bundle effects in insurance pricing.",
       "Strategy: Developed a competitive pricing engine using Quantile Regression to model the full distribution of market quotes, moving beyond mean-based estimation to capture risk-adjusted pricing tiers.",
       "Optimization: Formulated a revenue optimization strategy by maximizing Expected Revenue per customer: ER(τ) = qτ(x) · (1 − τ), integrating a strategic price floor to balance competitiveness with profitability.",
-      "Finding: Visualized and validated business intuition showing car age as a primary driver of premium sensitivity, enabling targeted discount strategies for lower-risk demographic segments."
+      "Finding: Visualualized and validated business intuition showing car age as a primary driver of premium sensitivity, enabling targeted discount strategies for lower-risk demographic segments."
     ],
-    coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/KKskkstq/Screenshot-2026-01-09-at-12-51-39-AM.png",
-      "https://i.postimg.cc/sB0QQ05t/Screenshot-2026-01-09-at-12-51-53-AM.png"
+      "https://i.postimg.cc/KzmnW6j2/Screenshot-2026-01-09-at-12-51-39-AM.png",
+      "https://i.postimg.cc/rmqSHBsF/Screenshot-2026-01-09-at-12-51-53-AM.png"
     ],
     tags: ["R", "GLM", "Quantile Regression", "Revenue Optimization"],
     githubUrl: "https://github.com/HHJJHHW/Allstate_Insurance_Quote"
@@ -212,12 +212,12 @@ export const PROJECTS: Project[] = [
       "Actionable Findings: Quantified that early prenatal visits (Trimester 1) increase birthweight by up to 0.22kg, while identifying poverty (-0.2kg) and smoking (-0.19kg) as the most significant negative risk drivers.",
       "Business Case Strategy: Engineered an inexpensive, regression-based screening framework for low-resource rural clinics, prioritizing actionable maternal indicators to flag high-risk pregnancies at the end of the first trimester."
     ],
-    coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=100&w=2560",
     images: [
-      "https://i.postimg.cc/grD9VwM2/Screenshot-2026-01-09-at-1-14-01-AM.png",
-      "https://i.postimg.cc/8sH8RFyF/Screenshot-2026-01-09-at-1-14-13-AM.png",
-      "https://i.postimg.cc/rzJ61dhD/Screenshot-2026-01-09-at-1-14-23-AM.png",
-      "https://i.postimg.cc/7bVv3CBf/Screenshot-2026-01-09-at-1-15-47-AM.png"
+      "https://i.postimg.cc/BQWqGHHH/Screenshot-2026-01-09-at-1-14-01-AM.png",
+      "https://i.postimg.cc/HsGpCXXt/Screenshot-2026-01-09-at-1-14-13-AM.png",
+      "https://i.postimg.cc/yYqVzccy/Screenshot-2026-01-09-at-1-14-23-AM.png",
+      "https://i.postimg.cc/rF68LxxC/Screenshot-2026-01-09-at-1-15-47-AM.png"
     ],
     tags: ["R", "Biostatistics", "Regression", "Hypothesis Testing"],
     githubUrl: "https://github.com/HHJJHHW/PersonalizedHealthcareAnalytics"
@@ -264,7 +264,7 @@ export const CERTIFICATES: Certificate[] = [
   {
     title: "Securities Industry Essentials (SIE)",
     issuer: "FINRA",
-    date: "2024",
+    date: "2025",
     logo: "https://i.postimg.cc/jqyyhVP1/finra-cropped-cec706e511713c50f0d41c88050d0e28879a7023.png",
     url: "https://i.postimg.cc/G80G25FK/Screenshot-2026-01-09-at-12-19-04-AM.png"
   },
@@ -282,8 +282,8 @@ export const HOBBIES = {
     title: "Tuba Section Leader",
     description: "Formerly the Tuba section leader for Northeastern University Pep Band and Boston College Marching Band. Music has always been a way to lead and harmonize within a large team.",
     images: [
-      "https://i.postimg.cc/WqZ5y1JR/IMG-7730.avif",
-      "https://i.postimg.cc/bDW6LtrS/IMG-8877.jpg"
+      "https://i.postimg.cc/VLC966md/IMG-7730.avif",
+      "https://i.postimg.cc/dV95s1jG/IMG-8877.jpg"
     ]
   },
   photography: [
