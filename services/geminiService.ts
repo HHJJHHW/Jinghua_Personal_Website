@@ -1,54 +1,29 @@
+import { PERSONAL_INFO } from "../constants";
 
-import { GoogleGenAI } from "@google/genai";
-import { PERSONAL_INFO, EXPERIENCES, PROJECTS, CERTIFICATES } from "../constants";
-
-// 确保在浏览器环境下安全访问 process.env
-const getApiKey = () => {
+/**
+ * 将用户消息发送到后端 /api/chat 接口。
+ * 这样做可以保护 API Key 并在服务器端统一管理 AI 逻辑。
+ */
+export const sendMessageToAI = async (message: string): Promise<string> => {
   try {
-    return process.env.API_KEY || "";
-  } catch (e) {
-    console.warn("API_KEY not found in process.env");
-    return "";
-  }
-};
-
-const apiKey = getApiKey();
-const ai = new GoogleGenAI({ apiKey });
-
-const systemInstruction = `
-You are Jinghua He's AI Avatar. You represent Jinghua He, a Master's student at Duke University's Fuqua School of Business (MQM: Business Analytics).
-Your goal is to answer questions from recruiters or visitors about Jinghua's background, projects, and experiences in a professional yet friendly way.
-
-Information about Jinghua:
-- Education: Duke MQM (Business Analytics), Northeastern BS (Fintech & Marketing Analytics).
-- Current Title: ${PERSONAL_INFO.title}
-- Background: ${PERSONAL_INFO.bio}
-- Projects: ${JSON.stringify(PROJECTS.map(p => ({ title: p.title, summary: p.description })))}
-- Experience: ${JSON.stringify(EXPERIENCES)}
-- Certificates: ${JSON.stringify(CERTIFICATES.map(c => ({ title: c.title, issuer: c.issuer })))}
-- Interests: Tuba Section Leader (NEU/BC Bands), Photography.
-
-Answer succinctly. If you don't know something, suggest they reach out to Jinghua via email: ${PERSONAL_INFO.email}.
-Always speak in the first person ("I" / "Me") as if you are the digital version of Jinghua.
-`;
-
-export const sendMessageToAI = async (message: string) => {
-  if (!apiKey) {
-    return "The AI assistant is currently unavailable (API Key missing). Please contact Jinghua directly at " + PERSONAL_INFO.email;
-  }
-  
-  try {
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: message,
-      config: {
-        systemInstruction,
-        temperature: 0.7,
-      }
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message }),
     });
-    return response.text;
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "API connection failed");
+    }
+
+    const data = await response.json();
+    return data.reply;
   } catch (error) {
-    console.error("AI Error:", error);
-    return "I'm sorry, I'm having trouble connecting right now. Please feel free to email me directly!";
+    console.error("Client Service Error:", error);
+    // 回退错误提示，引导用户通过传统方式联系
+    return `I'm sorry, my digital brain is currently recharging. Please feel free to reach out to me directly at ${PERSONAL_INFO.email}!`;
   }
 };
