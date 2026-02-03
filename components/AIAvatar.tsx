@@ -33,10 +33,10 @@ const AIAvatar: React.FC = () => {
   return (
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50">
       {isOpen ? (
-        <div className="bg-white rounded-2xl shadow-2xl w-[calc(100vw-32px)] sm:w-80 md:w-96 flex flex-col h-[500px] max-h-[80vh] border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4">
-          <div className="bg-duke-blue p-4 text-white flex justify-between items-center">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-[calc(100vw-32px)] sm:w-80 md:w-96 flex flex-col h-[500px] max-h-[80vh] border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in slide-in-from-bottom-4">
+          <div className="bg-duke-blue dark:bg-blue-600 p-4 text-white flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-blue-400 dark:bg-blue-500 flex items-center justify-center">
                 <Bot size={18} />
               </div>
               <div>
@@ -49,11 +49,13 @@ const AIAvatar: React.FC = () => {
             </button>
           </div>
           
-          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
+          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50 dark:bg-slate-950/50">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-3 rounded-2xl text-[13px] leading-relaxed ${
-                  m.role === 'user' ? 'bg-duke-blue text-white rounded-tr-none shadow-md shadow-blue-900/10' : 'bg-white text-slate-800 rounded-tl-none shadow-sm border border-slate-100'
+                  m.role === 'user' 
+                    ? 'bg-duke-blue dark:bg-blue-600 text-white rounded-tr-none shadow-md shadow-blue-900/10' 
+                    : 'bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-tl-none shadow-sm border border-slate-100 dark:border-slate-700'
                 }`}>
                   {m.text}
                 </div>
@@ -61,26 +63,26 @@ const AIAvatar: React.FC = () => {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white border border-slate-100 p-3 rounded-2xl rounded-tl-none animate-pulse text-slate-400 text-[13px] shadow-sm">
+                <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 p-3 rounded-2xl rounded-tl-none animate-pulse text-slate-400 dark:text-slate-500 text-[13px] shadow-sm">
                   Thinking...
                 </div>
               </div>
             )}
           </div>
 
-          <div className="p-4 border-t border-slate-100 bg-white flex gap-2">
+          <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 flex gap-2">
             <input 
               type="text" 
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Ask me something..."
-              className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-duke-blue/20 transition-all"
+              className="flex-1 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-duke-blue/20 dark:focus:ring-blue-500/20 transition-all dark:text-slate-100"
             />
             <button 
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className="bg-duke-blue text-white p-2.5 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-30"
+              className="bg-duke-blue dark:bg-blue-600 text-white p-2.5 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-30"
             >
               <Send size={18} />
             </button>
@@ -89,7 +91,7 @@ const AIAvatar: React.FC = () => {
       ) : (
         <button 
           onClick={() => setIsOpen(true)}
-          className="bg-duke-blue text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
+          className="bg-duke-blue dark:bg-blue-600 text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
         >
           <MessageSquare size={24} />
           <span className="hidden sm:inline font-medium pr-1">Chat with AI</span>

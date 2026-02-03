@@ -50,6 +50,11 @@ const App: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Ensure dark mode is disabled when the button is removed
+    document.documentElement.classList.remove('dark');
+  }, []);
+
+  useEffect(() => {
     const container = document.querySelector('.snap-container');
     const handleScroll = () => {
       const sections = SECTIONS.map(s => document.getElementById(s.id));
@@ -86,7 +91,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen overflow-hidden selection:bg-duke-blue selection:text-white relative font-sans bg-[#f7f9fc]">
+    <div className="h-screen w-screen overflow-hidden selection:bg-duke-blue selection:text-white relative font-sans bg-[#f7f9fc] transition-colors duration-500">
       
       {/* Navigation Dot Indicator */}
       <div className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-6 items-center">
@@ -108,6 +113,7 @@ const App: React.FC = () => {
       <nav className="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-slate-100/50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-5 flex justify-between items-center">
           <div className="font-bold text-xl md:text-2xl tracking-tighter-custom duke-blue font-display cursor-pointer" onClick={() => scrollTo('home')}>JH.HE</div>
+          
           <div className="hidden lg:flex gap-10 text-[11px] font-bold uppercase tracking-widest-custom text-slate-500">
             {SECTIONS.map(s => (
               <button 
@@ -120,47 +126,49 @@ const App: React.FC = () => {
             ))}
           </div>
           
-          <div className="relative" ref={dropdownRef}>
-            <button 
-              onClick={() => setShowContactDropdown(!showContactDropdown)}
-              className="bg-duke-blue text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-blue-900/10 flex items-center gap-2"
-            >
-              Contact
-            </button>
-            {showContactDropdown && (
-              <div className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden py-2 animate-in fade-in zoom-in duration-200 z-[110]">
-                <a 
-                  href={`mailto:${PERSONAL_INFO.email}`} 
-                  className="flex items-center gap-3 px-5 py-4 hover:bg-slate-50 transition-colors group"
-                >
-                  <div className="w-8 h-8 rounded-full bg-blue-50 text-duke-blue flex items-center justify-center group-hover:bg-duke-blue group-hover:text-white transition-all">
-                    <Mail size={16} />
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Me</p>
-                    <p className="text-xs font-semibold text-slate-800 truncate">{PERSONAL_INFO.email}</p>
-                  </div>
-                </a>
-                <a 
-                  href={`tel:${PERSONAL_INFO.phone}`} 
-                  className="flex items-center gap-3 px-5 py-4 hover:bg-slate-50 transition-colors group"
-                >
-                  <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-all">
-                    <Phone size={16} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Call Me</p>
-                    <p className="text-xs font-semibold text-slate-800">{PERSONAL_INFO.phone}</p>
-                  </div>
-                </a>
-              </div>
-            )}
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                onClick={() => setShowContactDropdown(!showContactDropdown)}
+                className="bg-duke-blue text-white px-5 md:px-7 py-2.5 rounded-xl text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-blue-900/10 flex items-center gap-2"
+              >
+                Contact
+              </button>
+              {showContactDropdown && (
+                <div className="absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden py-2 animate-in fade-in zoom-in duration-200 z-[110]">
+                  <a 
+                    href={`mailto:${PERSONAL_INFO.email}`} 
+                    className="flex items-center gap-3 px-5 py-4 hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-blue-50 text-duke-blue flex items-center justify-center group-hover:bg-duke-blue group-hover:text-white transition-all">
+                      <Mail size={16} />
+                    </div>
+                    <div className="overflow-hidden">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Email Me</p>
+                      <p className="text-xs font-semibold text-slate-800 truncate">{PERSONAL_INFO.email}</p>
+                    </div>
+                  </a>
+                  <a 
+                    href={`tel:${PERSONAL_INFO.phone}`} 
+                    className="flex items-center gap-3 px-5 py-4 hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-all">
+                      <Phone size={16} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Call Me</p>
+                      <p className="text-xs font-semibold text-slate-800">{PERSONAL_INFO.phone}</p>
+                    </div>
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Scroll Container */}
-      <div className="snap-container h-full overflow-y-scroll snap-y snap-proximity md:snap-mandatory scroll-smooth">
+      <div className="snap-container h-full overflow-y-scroll snap-y snap-proximity md:snap-mandatory scroll-smooth no-scrollbar">
         
         {/* HERO SECTION */}
         <SectionWrapper id="home" className="bg-transparent">
