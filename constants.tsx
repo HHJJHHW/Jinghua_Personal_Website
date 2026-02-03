@@ -14,24 +14,6 @@ export const PERSONAL_INFO = {
 
 export const PROJECTS: Project[] = [
   {
-    id: "airbnb-la",
-    title: "Airbnb Price Prediction in LA",
-    description: [
-      "Data Cleaning & Stability: Applied z-score filtering (|z|>3) and log-transformations to stabilize pricing distributions.",
-      "Feature-Group EDA: Performed high-dimensional EDA across Location, Property, and Host clusters to isolate dominant pricing drivers.",
-      "Modeling & Validation: Benchmarked Linear Regression, Random Forest, and XGBoost with cross-validation to optimize pricing and revenue targets.",
-      "Core Finding: Discovered that host status explains <1% of price variance, confirming that pricing is driven primarily by property fundamentals.",
-      "Valuation Engine: Engineered a tool to identify mispriced listings and quantify revenue impact of amenity upgrades."
-    ],
-    images: [
-      "https://i.postimg.cc/85dWDNsG/Screenshot-2026-01-09-at-2-11-48-AM.png",
-      "https://i.postimg.cc/1t06Ps4s/Screenshot-2026-01-09-at-2-12-13-AM.png"
-    ],
-    coverImage: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=100&w=2560",
-    tags: ["Pricing", "Python", "XGBoost"],
-    githubUrl: "https://github.com/HHJJHHW/Airbnb_Price_Prediction_in_LA"
-  },
-  {
     id: "credit-card-fraud",
     title: "Credit Card Fraud Detection",
     description: [
@@ -42,7 +24,7 @@ export const PROJECTS: Project[] = [
       "Expected Loss Alignment: Transactions are prioritized using Expected Loss = P(fraud) × Amount, combining risk likelihood and loss severity for business-aligned decisions.",
       "Loss Capture Curves: Expected Loss Capture Curves show that reviewing a small fraction of transactions captures a disproportionate share of total fraud loss, outperforming probability-only ranking."
     ],
-    coverImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=100&w=2560",
+    coverImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=100&w=2560",
     images: [
       "https://i.postimg.cc/pT8X5yD6/Screenshot-2026-02-03-at-1-30-40-AM.png",
       "https://i.postimg.cc/qBsvkhBG/Screenshot-2026-02-03-at-1-30-52-AM.png",
